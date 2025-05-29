@@ -40,7 +40,23 @@ Configurar las credenciales para enviar correo desde n8n a [Mailpit](https://mai
 
 Los mensajes enviados se pueden ver en [Mailpit](http://localhost:8025).
 
+## Exponer el servicio n8n con ngrok
+
+1. Crear una cuenta de [ngrok](https://ngrok.com/).
+2. Solicitar un [token de autenticación](https://dashboard.ngrok.com/get-started/your-authtoken).
+3. Solicitar el [dominio gratuito](https://dashboard.ngrok.com/domains).
+4. Crear el fichero `.env` a partir de `env-example` y configurar las variables con el token y el dominio.
+5. Arrancar los contenedores:
+
+    ```shell
+    make start-ngrok
+    ```
+
+6. Acceder a [ngrok](http://localhost:4040) donde mostrará la URL pública de acceso a n8n.
+
 ## Referencias
 
 - [Docker Installation](https://docs.n8n.io/hosting/installation/docker/)
 - [How to set up n8n with Docker Compose & Portainer](https://jannicknijholt.nl/n8n-with-docker-compose/)
+- [Using ngrok with n8n to make your workflow public](https://ngrok.com/docs/guides/other-guides/n8n/)
+- [Using ngrok with Docker](https://ngrok.com/docs/using-ngrok-with/docker/)

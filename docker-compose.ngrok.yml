@@ -1,0 +1,17 @@
+services:
+  n8n:
+    environment:
+      - N8N_EDITOR_BASE_URL=${NGROK_DOMAIN}
+      - WEBHOOK_URL=${NGROK_DOMAIN}
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    command:
+      - "http"
+      - "--url"
+      - "https://${NGROK_DOMAIN}"
+      - "http://host.docker.internal:5678"
+    environment:
+      NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
+    ports:
+      - "4040:4040"
