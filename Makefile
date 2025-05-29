@@ -16,9 +16,10 @@ _header:
 
 _urls:
 	${info }
-	@echo ---------------------------
+	@echo -------------------------------
 	@echo [n8n] http://localhost:5678
-	@echo ---------------------------
+	@echo [Mailpit] http://localhost:8025
+	@echo -------------------------------
 
 _start-command:
 	@docker compose up -d
