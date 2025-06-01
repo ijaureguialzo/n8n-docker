@@ -6,6 +6,7 @@ help: _header
 	@echo --------------------------------
 	@echo start / start-ngrok
 	@echo stop
+	@echo update
 	@echo workspace
 	@echo clean
 	@echo --------------------------------
@@ -42,6 +43,9 @@ start-ngrok: _start-command-ngrok _urls-ngrok
 
 stop:
 	@docker compose -f docker-compose.yml -f docker-compose.ngrok.yml down
+
+update:
+	@docker compose -f docker-compose.yml -f docker-compose.ngrok.yml pull
 
 workspace:
 	@docker compose exec n8n /bin/sh
