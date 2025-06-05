@@ -8,13 +8,10 @@ services:
     ports:
       - "5678:5678"
     volumes:
-      - n8n_data:/home/node/.n8n
+      - ./n8n_data:/home/node/.n8n
       - ./shared:/shared
 
   mailpit:
     image: axllent/mailpit:${MAILPIT_VERSION:-latest}
     ports:
       - "8025:8025"
-
-volumes:
-  n8n_data:
