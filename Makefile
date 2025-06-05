@@ -8,6 +8,7 @@ help: _header
 	@echo stop
 	@echo update
 	@echo workspace
+	@echo export
 	@echo clean
 	@echo --------------------------------
 
@@ -49,6 +50,9 @@ update:
 
 workspace:
 	@docker compose exec n8n /bin/sh
+
+export:
+	@python export.py
 
 clean:
 	@docker compose down -v --remove-orphans
